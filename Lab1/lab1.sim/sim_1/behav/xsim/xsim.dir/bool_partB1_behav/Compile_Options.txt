@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "bool_partB1_behav" "xil_defaultlib.bool_partB1" -log "elaborate.log" 
