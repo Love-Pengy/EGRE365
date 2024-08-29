@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Aug 29 15:56:50 2024
+# Process ID: 16480
+# Current directory: H:/EGRE365/lab1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3692 H:\EGRE365\lab1\lab1.xpr
+# Log file: H:/EGRE365/lab1/vivado.log
+# Journal file: H:/EGRE365/lab1\vivado.jou
+# Running On: EGR-W447-07, OS: Windows, CPU Frequency: 3696 MHz, CPU Physical cores: 6, Host memory: 34178 MB
+#-----------------------------------------------------------
+start_gui
+open_project H:/EGRE365/lab1/lab1.xpr
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top bool_partB1 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top bool_partB1 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+source bool_partB1.tcl
+close_sim
+launch_simulation
+source bool_partB1.tcl
+add_force {/bool_partB1/A} -radix hex {0 0ns}
+run 10 ns
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/C} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/C} -radix hex {0 0ns}
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/B} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/C} -radix hex {1 0ns}
+add_force {/bool_partB1/B} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/B} -radix hex {0 0ns}
+add_force {/bool_partB1/C} -radix hex {0 0ns}
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/A} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/C} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/C} -radix hex {0 0ns}
+add_force {/bool_partB1/B} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {0 0ns}
+add_force {/bool_partB1/C} -radix hex {1 0ns}
+run 10 ns
+add_force {/bool_partB1/D} -radix hex {1 0ns}
+run 10 ns
+close_sim
