@@ -1,4 +1,9 @@
 # SETUP INSTRUCTIONS FOR OUR BOARD
+
+<!--toc:start-->
+- [SETUP INSTRUCTIONS FOR OUR BOARD](#setup-instructions-for-our-board)
+<!--toc:end-->
+
 1. Create Project
 2. Hit Next
 3. Name Project and whatnot
@@ -12,4 +17,5 @@
 8. hit next and finish 
 9. on the left side click settings
 10. switch Verilog to VHDL on the first page
+12. go to simulation tab, simulation, change simulation time to 10 ns 
 11. apply and ok 
