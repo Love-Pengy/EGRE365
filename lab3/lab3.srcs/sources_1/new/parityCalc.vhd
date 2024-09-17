@@ -41,7 +41,7 @@ begin
         end if;
     end LOOP;
     output(0) <= count;
-        
+     
     -- Zero 
      zCheck := '1';
      for i in 0 to inputSize - 1 LOOP

@@ -25,14 +25,14 @@ architecture behavior of calc_testbench is
 
   -- define the maximum delay for the DUT
   constant MAX_DELAY : time := 20 ns;
-  constant BIT_WIDTH : integer := 8;
+  constant BIT_WIDTH : integer := 4;
   constant NO_VECTORS : integer := 10;
 
   -- declare a constant to hold an array of input values
   type input_value_array is array (1 to NO_VECTORS) of bit_vector(0 to BIT_WIDTH-1);
   type output_value_array is array (1 to NO_VECTORS) of bit_vector(0 to 2);
-  constant x_sig_values : input_value_array := (B"0000_0000",B"0000_0001",B"0000_0010",B"0000_0100",B"0000_1000", B"0001_0000", B"0010_0000", B"0100_0000", B"1000_0000", B"1111_1111");
-  constant s_sig_values : output_value_array := (B"010",B"100",B"100",B"100",B"100", B"100", B"100", B"100", B"100", B"001");
+  constant x_sig_values : input_value_array := (B"0000",B"0001",B"0010",B"0100",B"1000", B"1001", B"1010", B"1011", B"1100", B"1111");
+  constant s_sig_values : output_value_array := (B"010",B"100",B"100",B"100",B"100", B"000", B"000", B"100", B"000", B"001");
 
   -- define signals that connect to DUT
   signal x_sig: bit_vector(0 to BIT_WIDTH-1);
