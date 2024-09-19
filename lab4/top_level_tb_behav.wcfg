@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_level_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="top_level_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="45.000 ns"></ZoomEndTime>
+      <Cursor1Time time="6.855 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="205"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/top_level_tb/A_sig" type="array">
+      <obj_property name="ElementShortName">A_sig[15:0]</obj_property>
+      <obj_property name="ObjectShortName">A_sig[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/B_sig" type="array">
+      <obj_property name="ElementShortName">B_sig[15:0]</obj_property>
+      <obj_property name="ObjectShortName">B_sig[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/C_sig" type="array">
+      <obj_property name="ElementShortName">C_sig[15:0]</obj_property>
+      <obj_property name="ObjectShortName">C_sig[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/mode_sig" type="array">
+      <obj_property name="ElementShortName">mode_sig[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_sig[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/Zero_sig" type="logic">
+      <obj_property name="ElementShortName">Zero_sig</obj_property>
+      <obj_property name="ObjectShortName">Zero_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/OE_sig" type="logic">
+      <obj_property name="ElementShortName">OE_sig</obj_property>
+      <obj_property name="ObjectShortName">OE_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/Cout_sig" type="logic">
+      <obj_property name="ElementShortName">Cout_sig</obj_property>
+      <obj_property name="ObjectShortName">Cout_sig</obj_property>
+   </wvobject>
+</wave_config>
