@@ -45,33 +45,35 @@ end ALU;
 architecture behavioral of ALU is
 
 begin
-    process(OE)
-        begin
-        if(OE = '1') then 
-            C <= "ZZZZZZZZZZZZZZZZ";
-        end if;
-    end process;
     
-    process(A, B, Mode)
+    process(A, B, Mode, OE)
         variable tmpHold : signed(0 to 16);
         variable xCalc, yCalc : signed(0 to 16);
         begin
-            if(OE /= '1') then
+            Cout <= '0';
+            Zero <= '0';
+            C <= "ZZZZZZZZZZZZZZZZ";
+            if(OE = '1') then
                 case Mode is
                     -- addition
                     when "000" =>   
                         xCalc := resize(signed(A), 17);
                         yCalc := resize(signed(B), 17);
                         tmpHold := xCalc + yCalc;
+                        
+                        if(tmpHold = 0) then
+                            Zero <= '1';
+                        end if;
+                        
                         C <= std_logic_vector(tmpHold(0 to 15));
                         Cout <= tmpHold(16);
                      when others =>
                         C <= B"1111_1111_1111_1111";
                 end case;
-                        
-                C <= B"0011_1111_1111_1111";
-            
+             else
+                C <= "ZZZZZZZZZZZZZZZZ";
             end if;
+            
         end process;
 
 end behavioral;

@@ -1,5 +1,3 @@
 Time resolution is 1 ps
-Note: C value is incorrect.
-Time: 5 ns  Iteration: 0  Process: /top_level_tb/monitor  File: H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/top_level_tb.vhdl
-Note: C value is incorrect.
-Time: 25 ns  Iteration: 0  Process: /top_level_tb/monitor  File: H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/top_level_tb.vhdl
+Note: Overflow value is incorrect.
+Time: 15 ns  Iteration: 0  Process: /top_level_tb/monitor  File: H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/top_level_tb.vhdl

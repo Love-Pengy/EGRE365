@@ -7,7 +7,7 @@ end entity;
 
 architecture behavior of top_level_tb is
   constant TIME_DELAY : time := 20 ns;
-  constant NUM_VALS : integer := 2;
+  constant NUM_VALS : integer := 3;
 
 
   type A_array is array(0 to (NUM_VALS - 1)) of std_logic_vector(15 downto 0);
@@ -20,13 +20,19 @@ architecture behavior of top_level_tb is
   
   -- Expected input and output data.
   -- You need to correct and add more values here based on your design
-  constant A_vals : A_array := (B"1111_0000_1111_0000",B"0000_1111_0000_1111");
-  constant B_vals : B_array := (B"0000_1111_0000_1111",B"1111_0000_1111_0000");
-  constant mode_vals : mode_array := (B"000",B"100");
-  constant Zero_vals : Zero_array := ('0','0');
-  constant OE_vals : OE_array := ('1','0');
-  constant Cout_vals : Cout_array := ('0','0');
-  constant C_vals : C_array := (B"1111_1111_1111_1111","ZZZZZZZZZZZZZZZZ");
+  constant A_vals : A_array := (B"1111_0000_1111_0000",
+                                B"0000_1111_0000_1111", 
+                                B"0000_0000_0000_0000");
+  constant B_vals : B_array := (B"0000_1111_0000_1111",
+                                B"1111_0000_1111_0000", 
+                                B"0000_0000_0000_0000");
+  constant mode_vals : mode_array := (B"000",B"100",B"000");
+  constant Zero_vals : Zero_array := ('0','0','1');
+  constant OE_vals : OE_array := ('1','0','1');
+  constant Cout_vals : Cout_array := ('0','0','0');
+  constant C_vals : C_array := (B"1111_1111_1111_1111",
+                                "ZZZZZZZZZZZZZZZZ", 
+                                B"0000_0000_0000_0000");
 
   signal A_sig : std_logic_vector(15 downto 0);
   signal B_sig : std_logic_vector(15 downto 0);
