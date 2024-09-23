@@ -2,10 +2,10 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity top_level_tb is
+entity adderTB is
 end entity;
 
-architecture behavior of top_level_tb is
+architecture behavior of adderTB is
   constant TIME_DELAY : time := 20 ns;
   constant NUM_VALS : integer := 3;
 
@@ -20,7 +20,7 @@ architecture behavior of top_level_tb is
   
   -- Expected input and output data.
   -- You need to correct and add more values here based on your design
-  constant A_vals : A_array := (B"1111_0000_1111_0000",
+  constant A_vals : A_array := (B"0111_0000_1111_0000",
                                 B"0000_1111_0000_1111", 
                                 B"0000_0000_0000_0000");
   constant B_vals : B_array := (B"0000_1111_0000_1111",
@@ -82,7 +82,7 @@ begin
       wait for TIME_DELAY/2;
 
       assert Cout_sig = Cout_vals(i)
-        report "Overflow value is incorrect."
+        report "Cout value is incorrect."
         severity note;
 
       i := i + 1;

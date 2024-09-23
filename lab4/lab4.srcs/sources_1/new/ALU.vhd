@@ -47,7 +47,7 @@ architecture behavioral of ALU is
 begin
     
     process(A, B, Mode, OE)
-        variable tmpHold : signed(0 to 16);
+        variable tmpHold : signed(0 to 16) := (others => '0');
         variable xCalc, yCalc : signed(0 to 16);
         begin
             Cout <= '0';
@@ -66,9 +66,9 @@ begin
                         end if;
                         
                         C <= std_logic_vector(tmpHold(0 to 15));
-                        Cout <= tmpHold(16);
+                        Cout <= tmpHold(0);
                      when others =>
-                        C <= B"1111_1111_1111_1111";
+                        C <= B"0111_1111_1111_1111";
                 end case;
              else
                 C <= "ZZZZZZZZZZZZZZZZ";
