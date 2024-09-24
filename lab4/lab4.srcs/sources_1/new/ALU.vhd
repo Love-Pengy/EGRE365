@@ -47,8 +47,11 @@ architecture behavioral of ALU is
 begin
     
     process(A, B, Mode, OE)
-        variable tmpHold : signed(0 to 16) := (others => '0');
-        variable xCalc, yCalc : signed(0 to 16);
+        variable sumAns: signed(0 to 16) := (others => '0');
+        variable sumCalc1,sumCalc2 : signed(0 to 16);
+        variable AHold : signed(0 to 15);
+        variable shiftHold : signed(0 to 15);
+        variable andHold : signed(0 to 15);
         begin
             Cout <= '0';
             Zero <= '0';
@@ -56,24 +59,74 @@ begin
             if(OE = '1') then
                 case Mode is
                     -- addition
+                    -- TODO FIGURE OUT WHY 1111_0000_1111_0000 + 0000_1111_0000_1111 returns 1111_1111_1111_1111
                     when "000" =>   
-                        xCalc := resize(signed(A), 17);
-                        yCalc := resize(signed(B), 17);
-                        tmpHold := xCalc + yCalc;
-                        
-                        if(tmpHold = 0) then
-                            Zero <= '1';
-                        end if;
-                        
-                        C <= std_logic_vector(tmpHold(0 to 15));
-                        Cout <= tmpHold(0);
-                     when others =>
+                      sumCalc1 := resize(signed(A), 17);
+                      sumCalc2 := resize(signed(B), 17);
+                      sumAns := sumCalc1 + sumCalc2;
+                      
+                      if(sumAns = 0) then
+                          Zero <= '1';
+                      end if;
+                      
+                      C <= std_logic_vector(sumAns(0 to 15));
+                      Cout <= sumAns(0);
+                      
+                    -- Subtraction
+                    -- when "001" =>  
+                    --   sumCalc1 := resize(signed(A), 17);
+                    --   sumCalc2 := resize(signed(A), 17);
+                    --   sumCalc2(0) = sumCalc2(0) XOR 1;
+                    --   sumAns := sumCalc1 + sumCalc2;
+                    --
+                    --   if(sumAns = 0) 0then
+                    --     Zero <= '1';
+                    --   end if;
+                    --
+                    --   C <= std_logic_vector(sumAns(0 to 15));
+                    --   Cout <= sumAns(0);
+
+                    -- -A
+                    -- when "010" =>
+                    --   AHold := A;
+                    --   AHold(0) := AHold(0) XOR 1;
+                    --   C <= AHold;
+                    --   if(AHold = 0) then
+                    --     Zero <= '1';
+                    --   end if;
+                    --   Cout <= '0';
+                      
+                    -- sll
+                    -- when "011" =>
+                    --   shiftHold => signed(A) SLL 1; 
+                    --   if((shiftHold(0) XOR A(0)) = '1') then 
+                    --     Cout <= '1';
+                    --   end if
+                    --   if(shiftHold = '0') then 
+                    --     Zero <= '1';
+                    --   end if
+                    --   C  <= shiftHold;
+
+                    -- &
+                    when "100" => 
+                      for i in 0 to 15 LOOP 
+                        andHold(i) <= A(i) AND B(i); 
+                      end LOOP; 
+                      -- TODO: CHECK THIS 
+                      -- or the answer with 0's 
+                      if(andHold = '0') then 
+                        Zero <= '1';
+                      end if;
+                      if(andHold(15) = '1') then
+                        Cout <= '1';
+                      end if;
+                    when others =>
                         C <= B"0111_1111_1111_1111";
                 end case;
              else
                 C <= "ZZZZZZZZZZZZZZZZ";
             end if;
-            
+                
         end process;
 
 end behavioral;
