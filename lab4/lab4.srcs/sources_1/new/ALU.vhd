@@ -52,6 +52,8 @@ begin
         variable AHold : signed(0 to 15);
         variable shiftHold : signed(0 to 15);
         variable andHold : signed(0 to 15);
+        variable orHold : signed(0 to 15);
+        variable xorHold : signed(0 to 15);
         begin
             Cout <= '0';
             Zero <= '0';
@@ -108,18 +110,45 @@ begin
                     --   C  <= shiftHold;
 
                     -- &
-                    when "100" => 
-                      for i in 0 to 15 LOOP 
-                        andHold(i) <= A(i) AND B(i); 
-                      end LOOP; 
-                      -- TODO: CHECK THIS 
-                      -- or the answer with 0's 
-                      if(andHold = '0') then 
-                        Zero <= '1';
-                      end if;
-                      if(andHold(15) = '1') then
-                        Cout <= '1';
-                      end if;
+                    -- when "100" => 
+                    --   for i in 0 to 15 LOOP 
+                    --     andHold(i) <= A(i) AND B(i); 
+                    --   end LOOP; 
+                    --   -- TODO: CHECK THIS 
+                    --   -- or the answer with 0's 
+                    --   if(andHold = '0') then 
+                    --     Zero <= '1';
+                    --   end if;
+                    --   if(andHold(15) = '1') then
+                    --     Cout <= '1';
+                    --   end if;
+
+                    -- | 
+                    -- when "101" => 
+                    --   for i in 0 to 15 LOOP 
+                    --     orHold(i) <= A(i) OR B(i); 
+                    --   end LOOP; 
+                    --   -- TODO: CHECK THIS 
+                    --   -- or the answer with 0's 
+                    --   if(orHold = '0') then 
+                    --     Zero <= '1';
+                    --   end if;
+                    --   if(orHold(15) = '1') then
+                    --     Cout <= '1';
+                    --   end if;
+
+                    -- XOR 
+                    -- when "110" => 
+                    --   for i in 0 to 15 LOOP 
+                    --     xorHold(i) <= A(i) XOR B(i); 
+                    --   end LOOP; 
+                    --   if(xorHold= '0') then 
+                    --     Zero <= '1';
+                    --   end if;
+                    --   if(xorHold(15) = '1') then
+                    --     Cout <= '1';
+                    --   end if;
+
                     when others =>
                         C <= B"0111_1111_1111_1111";
                 end case;
