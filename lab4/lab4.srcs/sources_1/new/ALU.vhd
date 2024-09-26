@@ -54,9 +54,10 @@ begin
         variable andHold : signed(0 to 15);
         variable orHold : signed(0 to 15);
         variable xorHold : signed(0 to 15);
+        variable notHold : signed(0 to 15);
+        Zero <= '0';
+        Cout <= '0';
         begin
-            Cout <= '0';
-            Zero <= '0';
             C <= "ZZZZZZZZZZZZZZZZ";
             if(OE = '1') then
                 case Mode is
@@ -66,11 +67,11 @@ begin
                       sumCalc1 := resize(signed(A), 17);
                       sumCalc2 := resize(signed(B), 17);
                       sumAns := sumCalc1 + sumCalc2;
-                      
+
                       if(sumAns = 0) then
                           Zero <= '1';
                       end if;
-                      
+
                       C <= std_logic_vector(sumAns(0 to 15));
                       Cout <= sumAns(0);
                       
@@ -142,13 +143,22 @@ begin
                     --   for i in 0 to 15 LOOP 
                     --     xorHold(i) <= A(i) XOR B(i); 
                     --   end LOOP; 
-                    --   if(xorHold= '0') then 
+                    --   if(xorHold = '0') then 
                     --     Zero <= '1';
                     --   end if;
                     --   if(xorHold(15) = '1') then
                     --     Cout <= '1';
                     --   end if;
-
+                    
+                    -- NOT(A)
+                    when "111" =>
+                      notHold <= NOT A;
+                      if(notHold = "0") then
+                        Zero <= 1;
+                      end if;
+                      if(notHold(15) = '1') then
+                        Cout <= '1'
+                      end if;
                     when others =>
                         C <= B"0111_1111_1111_1111";
                 end case;

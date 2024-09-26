@@ -7,7 +7,7 @@ end entity;
 
 architecture behavior of adderTB is
   constant TIME_DELAY : time := 20 ns;
-  constant NUM_VALS : integer := 3;
+  constant NUM_VALS : integer := 10;
 
 
   type A_array is array(0 to (NUM_VALS - 1)) of std_logic_vector(15 downto 0);
@@ -20,6 +20,14 @@ architecture behavior of adderTB is
   
   -- Expected input and output data.
   -- You need to correct and add more values here based on your design
+  -- TODO: test the following cases (make 10 test cases total): 
+  -- Full Zeros
+  -- a negative and a positive 
+  -- a negative and a negative
+  -- a positive and negative that sums to zero 
+  -- overflows in the negative and positive direvtion 
+  -- a positive and a positive 
+  
   constant A_vals : A_array := (B"0111_0000_1111_0000",
                                 B"0000_1111_0000_1111", 
                                 B"0000_0000_0000_0000");
