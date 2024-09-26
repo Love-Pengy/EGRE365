@@ -28,19 +28,33 @@ architecture behavior of adderTB is
   -- overflows in the negative and positive direvtion 
   -- a positive and a positive 
   
-  constant A_vals : A_array := (B"0111_0000_1111_0000",
-                                B"0000_1111_0000_1111", 
-                                B"0000_0000_0000_0000");
-  constant B_vals : B_array := (B"0000_1111_0000_1111",
-                                B"1111_0000_1111_0000", 
-                                B"0000_0000_0000_0000");
-  constant mode_vals : mode_array := (B"000",B"100",B"000");
-  constant Zero_vals : Zero_array := ('0','0','1');
-  constant OE_vals : OE_array := ('1','0','1');
+  constant A_vals : A_array := (B"0000_0000_0000_0000", 
+                                B"1000_1000_0000_0000", 
+                                B"1111_0000_0000_0000");
+                                
+                                
+  constant B_vals : B_array := (B"0000_0000_0000_0000",
+                                B"0000_0001_0001_0000", 
+                                B"1000_0101_0000_0000");
+                                
+                                
+  constant mode_vals : mode_array := (B"000", 
+                                      B"000", 
+                                      B"000", 
+                                      B"000", 
+                                      B"000", 
+                                      B"000", 
+                                      B"000");
+                                      
+  constant Zero_vals : Zero_array := ('1','0','0');
+  
+  constant OE_vals : OE_array := ('1','1','1');
+  
   constant Cout_vals : Cout_array := ('0','0','0');
-  constant C_vals : C_array := (B"1111_1111_1111_1111",
-                                "ZZZZZZZZZZZZZZZZ", 
-                                B"0000_0000_0000_0000");
+  
+  constant C_vals : C_array := (B"0000_0000_0000_0000",
+                                B"1000_1001_0001_0000", 
+                                B"1111_0101_0000_0000");
 
   signal A_sig : std_logic_vector(15 downto 0);
   signal B_sig : std_logic_vector(15 downto 0);
@@ -81,17 +95,17 @@ begin
     while (i < NUM_VALS) loop
       assert C_sig = C_vals(i)
         report "C value is incorrect."
-        severity note;
+        severity error;
 
       assert Zero_sig = Zero_vals(i)
         report "Zero value is incorrect."
-        severity note;
+        severity error;
 
       wait for TIME_DELAY/2;
 
       assert Cout_sig = Cout_vals(i)
         report "Cout value is incorrect."
-        severity note;
+        severity error;
 
       i := i + 1;
       wait for TIME_DELAY/2;

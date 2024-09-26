@@ -45,6 +45,8 @@ end ALU;
 architecture behavioral of ALU is
 
 begin
+    Zero <= '0';
+    Cout <= '0';
     
     process(A, B, Mode, OE)
         variable sumAns: signed(0 to 16) := (others => '0');
@@ -55,8 +57,7 @@ begin
         variable orHold : signed(0 to 15);
         variable xorHold : signed(0 to 15);
         variable notHold : signed(0 to 15);
-        Zero <= '0';
-        Cout <= '0';
+        
         begin
             C <= "ZZZZZZZZZZZZZZZZ";
             if(OE = '1') then
@@ -76,88 +77,88 @@ begin
                       Cout <= sumAns(0);
                       
                     -- Subtraction
-                    -- when "001" =>  
-                    --   sumCalc1 := resize(signed(A), 17);
-                    --   sumCalc2 := resize(signed(A), 17);
-                    --   sumCalc2(0) = sumCalc2(0) XOR 1;
-                    --   sumAns := sumCalc1 + sumCalc2;
-                    --
-                    --   if(sumAns = 0) 0then
-                    --     Zero <= '1';
-                    --   end if;
-                    --
-                    --   C <= std_logic_vector(sumAns(0 to 15));
-                    --   Cout <= sumAns(0);
+                     when "001" =>  
+                       sumCalc1 := resize(signed(A), 17);
+                       sumCalc2 := resize(signed(A), 17);
+                       sumCalc2(0) := sumCalc2(0) XOR '1';
+                       sumAns := sumCalc1 + sumCalc2;
+                    
+                       if(sumAns = 0) then
+                         Zero <= '1';
+                       end if;
+                    
+                       C <= std_logic_vector(sumAns(0 to 15));
+                       Cout <= sumAns(0);
 
                     -- -A
-                    -- when "010" =>
-                    --   AHold := A;
-                    --   AHold(0) := AHold(0) XOR 1;
-                    --   C <= AHold;
-                    --   if(AHold = 0) then
-                    --     Zero <= '1';
-                    --   end if;
-                    --   Cout <= '0';
-                      
+                     when "010" =>
+                       AHold := NOT signed(A);
+                       AHold := AHold + 1;
+                       if(AHold = 0) then
+                         Zero <= '1';
+                       end if;
+                       Cout <= '0';
+                       C <= std_logic_vector(AHold);
+                       
                     -- sll
-                    -- when "011" =>
-                    --   shiftHold => signed(A) SLL 1; 
-                    --   if((shiftHold(0) XOR A(0)) = '1') then 
-                    --     Cout <= '1';
-                    --   end if
-                    --   if(shiftHold = '0') then 
-                    --     Zero <= '1';
-                    --   end if
-                    --   C  <= shiftHold;
+                     when "011" =>
+                       shiftHold := signed(A) SLL 1; 
+                       if((shiftHold(0) XOR A(0)) = '1') then 
+                         Cout <= '1';
+                       end if;
+                       if(shiftHold = 0) then 
+                         Zero <= '1';
+                       end if;
+                       C  <= std_logic_vector(shiftHold);
 
                     -- &
-                    -- when "100" => 
-                    --   for i in 0 to 15 LOOP 
-                    --     andHold(i) <= A(i) AND B(i); 
-                    --   end LOOP; 
-                    --   -- TODO: CHECK THIS 
-                    --   -- or the answer with 0's 
-                    --   if(andHold = '0') then 
-                    --     Zero <= '1';
-                    --   end if;
-                    --   if(andHold(15) = '1') then
-                    --     Cout <= '1';
-                    --   end if;
+                     when "100" => 
+                       for i in 0 to 15 LOOP 
+                         andHold(i) := A(i) AND B(i); 
+                       end LOOP; 
+                       -- TODO: CHECK THIS 
+                       -- or the answer with 0's 
+                       if(andHold = 0) then 
+                         Zero <= '1';
+                       end if;
+                       if(andHold(15) = '1') then
+                         Cout <= '1';
+                       end if;
 
                     -- | 
-                    -- when "101" => 
-                    --   for i in 0 to 15 LOOP 
-                    --     orHold(i) <= A(i) OR B(i); 
-                    --   end LOOP; 
-                    --   -- TODO: CHECK THIS 
-                    --   -- or the answer with 0's 
-                    --   if(orHold = '0') then 
-                    --     Zero <= '1';
-                    --   end if;
-                    --   if(orHold(15) = '1') then
-                    --     Cout <= '1';
-                    --   end if;
+                     when "101" => 
+                       for i in 0 to 15 LOOP 
+                         orHold(i) := A(i) OR B(i); 
+                       end LOOP; 
+                       -- TODO: CHECK THIS 
+                       -- or the answer with 0's 
+                       if(orHold = 0) then 
+                         Zero <= '1';
+                       end if;
+                       if(orHold(15) = '1') then
+                         Cout <= '1';
+                       end if;
 
                     -- XOR 
-                    -- when "110" => 
-                    --   for i in 0 to 15 LOOP 
-                    --     xorHold(i) <= A(i) XOR B(i); 
-                    --   end LOOP; 
-                    --   if(xorHold = '0') then 
-                    --     Zero <= '1';
-                    --   end if;
-                    --   if(xorHold(15) = '1') then
-                    --     Cout <= '1';
-                    --   end if;
+                     when "110" => 
+                       for i in 0 to 15 LOOP 
+                         xorHold(i) := A(i) XOR B(i); 
+                       end LOOP; 
+                       if(xorHold = 0) then 
+                         Zero <= '1';
+                       end if;
+                       -- TODO
+                       Cout <= xorHold(15);
+                       
                     
                     -- NOT(A)
                     when "111" =>
-                      notHold <= NOT A;
+                      notHold := NOT signed(A);
                       if(notHold = "0") then
-                        Zero <= 1;
+                        Zero <= '1';
                       end if;
                       if(notHold(15) = '1') then
-                        Cout <= '1'
+                        Cout <= '1';
                       end if;
                     when others =>
                         C <= B"0111_1111_1111_1111";
