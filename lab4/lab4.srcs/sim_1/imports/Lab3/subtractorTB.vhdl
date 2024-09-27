@@ -19,31 +19,29 @@ architecture behavior of adderTB is
   type Cout_array is array(0 to (NUM_VALS - 1)) of std_logic;
   
   -- Expected input and output data.
-  -- You need to correct and add more values here based on your design
-  -- TODO: test the following cases (make 10 test cases total): 
   -- Full Zeros
   -- a negative and a positive 
   -- a negative and a negative
-  -- a positive and negative that sums to zero 
+  -- a positive and negative in which the difference is zero 
   -- overflows in the negative and positive direvtion 
-
   -- a positive and a positive 
+
   
   constant A_vals : A_array := (B"0000_0000_0000_0000", 
-                                B"1000_1000_0000_0000", 
-                                B"1111_0000_0000_0000", 
-                                B"1111_1111_1111_1111", 
-                                B"1000_0000_0000_0000", 
-                                B"0000_0000_0000_1000);
+                                B"1000_1000_0000_0000",  -- -30720
+                                B"1111_0000_0000_0000", -- -4096 
+                                B"1111_1111_1111_1111", -- -1 
+                                B"1000_0000_0000_0000", -- -32768 
+                                B"0000_0000_0000_1000); -- 8 
                                 
                                 
                                 
   constant B_vals : B_array := (B"0000_0000_0000_0000",
-                                B"0000_0001_0001_0000", 
-                                B"1000_0101_0000_0000", 
-                                B"0000_0000_0000_0001", 
-                                B"1000_0000_0000_0001",
-                                B"0000_0000_0000_0010);
+                                B"0000_0001_0001_0000", -- 272
+                                B"1000_0101_0000_0000", -- -31488 
+                                B"1111_1111_1111_1111", -- -1 
+                                B"1000_0000_0000_0001", -- -32767
+                                B"0000_0000_0000_0010); -- 2
                                 
                                 
                                 
@@ -62,11 +60,11 @@ architecture behavior of adderTB is
   constant Cout_vals : Cout_array := ('0','0','0', '0', '1', '0');
   
   constant C_vals : C_array := (B"0000_0000_0000_0000",
-                                B"1000_1001_0001_0000", 
-                                B"1111_0101_0000_0000", 
-                                B"0000_0000_0000_0000",
-                                B"0000_0000_0000_0001", 
-                                B"0000_0000_0000_1010);
+                                B"1000_0110_1111_0000", -- -30720 - 272 = 
+                                B"0110_1011_0000_0000", -- -4096 - -31488 
+                                B"0000_0000_0000_0000", -- -1 - -1 = -2
+                                B"1111_1111_1111_1111", -- -32768 - -32767 = -1
+                                B"0000_0000_0000_0110); -- 8 - 2 = 6
                                 
 
   signal A_sig : std_logic_vector(15 downto 0);
