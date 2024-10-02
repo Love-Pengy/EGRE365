@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Oct  2 11:01:45 2024
+# Process ID: 1688
+# Current directory: H:/EGRE365/lab4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14796 H:\EGRE365\lab4\lab4.xpr
+# Log file: H:/EGRE365/lab4/vivado.log
+# Journal file: H:/EGRE365/lab4\vivado.jou
+# Running On: EGR-W447-11, OS: Windows, CPU Frequency: 3696 MHz, CPU Physical cores: 6, Host memory: 34178 MB
+#-----------------------------------------------------------
+start_gui
+open_project H:/EGRE365/lab4/lab4.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+open_wave_config H:/EGRE365/lab4/top_level_tb_behav.wcfg
+source adderTB.tcl
+close_sim
+launch_simulation
+open_wave_config H:/EGRE365/lab4/top_level_tb_behav.wcfg
+source adderTB.tcl
+close_sim
+launch_simulation
+open_wave_config H:/EGRE365/lab4/top_level_tb_behav.wcfg
+source adderTB.tcl
+close_sim
+launch_simulation
+open_wave_config H:/EGRE365/lab4/top_level_tb_behav.wcfg
+source adderTB.tcl
+synth_design -top ALU -part xc7a100tcsg324-1 -lint 
+close_sim
+launch_simulation
+launch_simulation

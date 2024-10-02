@@ -34,7 +34,7 @@ architecture behavior of adderTB is
                                 B"1111_0000_0000_0000", 
                                 B"1111_1111_1111_1111", 
                                 B"1000_0000_0000_0000", 
-                                B"0000_0000_0000_1000);
+                                B"0000_0000_0000_1000");
                                 
                                 
                                 
@@ -43,12 +43,11 @@ architecture behavior of adderTB is
                                 B"1000_0101_0000_0000", 
                                 B"0000_0000_0000_0001", 
                                 B"1000_0000_0000_0001",
-                                B"0000_0000_0000_0010);
+                                B"0000_0000_0000_0010");
                                 
                                 
                                 
   constant mode_vals : mode_array := (B"000", 
-                                      B"000", 
                                       B"000", 
                                       B"000", 
                                       B"000", 
@@ -66,7 +65,7 @@ architecture behavior of adderTB is
                                 B"1111_0101_0000_0000", 
                                 B"0000_0000_0000_0000",
                                 B"0000_0000_0000_0001", 
-                                B"0000_0000_0000_1010);
+                                B"0000_0000_0000_1010");
                                 
 
   signal A_sig : std_logic_vector(15 downto 0);
@@ -93,7 +92,7 @@ begin
     for i in 0 to (NUM_VALS - 1) loop
       A_sig <= A_vals(i);
       B_sig <= B_vals(i);
-      C_sig <= C_vals(i);
+      --C_sig <= C_vals(i);
       mode_sig <= mode_vals(i);
       OE_sig <= OE_vals(i);
       wait for TIME_DELAY;

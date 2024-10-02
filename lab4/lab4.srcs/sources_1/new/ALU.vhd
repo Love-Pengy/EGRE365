@@ -45,8 +45,6 @@ end ALU;
 architecture behavioral of ALU is
 
 begin
-    Zero <= '0';
-    Cout <= '0';
     
     process(A, B, Mode, OE)
         variable sumAns: signed(0 to 16) := (others => '0');
@@ -69,8 +67,10 @@ begin
                       sumCalc2 := resize(signed(B), 17);
                       sumAns := sumCalc1 + sumCalc2;
 
-                      if(sumAns = 0) then
+                      if(sumAns = B"0000_0000_0000_0000") then
                           Zero <= '1';
+                      else
+                        Zero <= '0';
                       end if;
 
                       C <= std_logic_vector(sumAns(0 to 15));
@@ -80,11 +80,12 @@ begin
                      when "001" =>  
                        sumCalc1 := resize(signed(A), 17);
                        sumCalc2 := resize(signed(A), 17);
-                       sumCalc2(0) := sumCalc2(0) XOR '1';
-                       sumAns := sumCalc1 + sumCalc2;
+                       sumAns := sumCalc1 - sumCalc2;
                     
-                       if(sumAns = 0) then
+                       if(sumAns = B"0000_0000_0000_0000") then
                          Zero <= '1';
+                       else
+                        Zero <= '0';
                        end if;
                     
                        C <= std_logic_vector(sumAns(0 to 15));
@@ -94,9 +95,12 @@ begin
                      when "010" =>
                        AHold := NOT signed(A);
                        AHold := AHold + 1;
-                       if(AHold = 0) then
+                       if(AHold = B"0000_0000_0000_0000") then
                          Zero <= '1';
+                       else 
+                        Zero <= '0';
                        end if;
+                       
                        Cout <= '0';
                        C <= std_logic_vector(AHold);
                        
@@ -108,6 +112,8 @@ begin
                        end if;
                        if(shiftHold = 0) then 
                          Zero <= '1';
+                       else 
+                        Zero <= '0';
                        end if;
                        C  <= std_logic_vector(shiftHold);
 
@@ -120,6 +126,8 @@ begin
                        -- or the answer with 0's 
                        if(andHold = 0) then 
                          Zero <= '1';
+                       else 
+                        Zero <= '0';
                        end if;
                        if(andHold(15) = '1') then
                          Cout <= '1';
@@ -134,6 +142,8 @@ begin
                        -- or the answer with 0's 
                        if(orHold = 0) then 
                          Zero <= '1';
+                       else 
+                        Zero <= '0';
                        end if;
                        if(orHold(15) = '1') then
                          Cout <= '1';
@@ -146,6 +156,8 @@ begin
                        end LOOP; 
                        if(xorHold = 0) then 
                          Zero <= '1';
+                       else
+                        Zero <= '0';
                        end if;
                        -- TODO
                        Cout <= xorHold(15);
@@ -156,9 +168,12 @@ begin
                       notHold := NOT signed(A);
                       if(notHold = "0") then
                         Zero <= '1';
+                      else 
+                        Zero <= '0';
                       end if;
                       if(notHold(15) = '1') then
                         Cout <= '1';
+                      else 
                       end if;
                     when others =>
                         C <= B"0111_1111_1111_1111";
