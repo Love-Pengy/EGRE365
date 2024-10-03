@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "subtractorTB_behav" "xil_defaultlib.subtractorTB" -log "elaborate.log" 

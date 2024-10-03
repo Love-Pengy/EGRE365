@@ -2,10 +2,10 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity adderTB is
+entity subtractorTB is
 end entity;
 
-architecture behavior of adderTB is
+architecture behavior of subtractorTB is
   constant TIME_DELAY : time := 20 ns;
   constant NUM_VALS : integer := 6;
 
@@ -32,7 +32,7 @@ architecture behavior of adderTB is
                                 B"1111_0000_0000_0000", -- -4096 
                                 B"1111_1111_1111_1111", -- -1 
                                 B"1000_0000_0000_0000", -- -32768 
-                                B"0000_0000_0000_1000); -- 8 
+                                B"0000_0000_0000_1000"); -- 8 
                                 
                                 
                                 
@@ -41,12 +41,11 @@ architecture behavior of adderTB is
                                 B"1000_0101_0000_0000", -- -31488 
                                 B"1111_1111_1111_1111", -- -1 
                                 B"1000_0000_0000_0001", -- -32767
-                                B"0000_0000_0000_0010); -- 2
+                                B"0000_0000_0000_0010"); -- 2
                                 
                                 
                                 
   constant mode_vals : mode_array := (B"001", 
-                                      B"001", 
                                       B"001", 
                                       B"001", 
                                       B"001", 
@@ -64,7 +63,7 @@ architecture behavior of adderTB is
                                 B"0110_1011_0000_0000", -- -4096 - -31488 
                                 B"0000_0000_0000_0000", -- -1 - -1 = -2
                                 B"1111_1111_1111_1111", -- -32768 - -32767 = -1
-                                B"0000_0000_0000_0110); -- 8 - 2 = 6
+                                B"0000_0000_0000_0110"); -- 8 - 2 = 6
                                 
 
   signal A_sig : std_logic_vector(15 downto 0);

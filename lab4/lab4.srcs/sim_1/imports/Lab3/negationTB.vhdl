@@ -2,10 +2,10 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity adderTB is
+entity negationTB is
 end entity;
 
-architecture behavior of adderTB is
+architecture behavior of negationTB is
   constant TIME_DELAY : time := 20 ns;
   constant NUM_VALS : integer := 3;
 
@@ -34,10 +34,6 @@ architecture behavior of adderTB is
                                 
                                 
   constant mode_vals : mode_array := (B"010", 
-                                      B"010", 
-                                      B"010", 
-                                      B"010", 
-                                      B"010", 
                                       B"010", 
                                       B"010");
                                       
