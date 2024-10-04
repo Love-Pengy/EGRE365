@@ -46,13 +46,6 @@ end ALU;
 architecture behavioral of ALU is
 
 begin
-    C <= "ZZZZZZZZZZZZZZZZ";
-    process(OE)
-        begin
-            if(OE = '0') then
-                C <= "ZZZZZZZZZZZZZZZZ";
-            end if;
-    end process;
     
     process(A, B, Mode)
         variable sumAns: signed(N downto 0) := (others => '0');
@@ -161,6 +154,8 @@ begin
                     when others =>
                     
                 end case;
+                else 
+                    C <= "ZZZZZZZZZZZZZZZZ";
                 end if;
         end process;
 
