@@ -1,1 +1,5 @@
 Time resolution is 1 ps
+Error: C value is incorrect.
+Time: 5 ns  Iteration: 0  Process: /oeTB/monitor  File: H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/oeTB.vhdl
+Error: C value is incorrect.
+Time: 25 ns  Iteration: 0  Process: /oeTB/monitor  File: H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/oeTB.vhdl

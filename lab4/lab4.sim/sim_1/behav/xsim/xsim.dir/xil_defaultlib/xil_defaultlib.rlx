@@ -3,7 +3,12 @@
 Oct 13 2023
 20:47:58
 H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/adderTB.vhdl,1727881747,vhdl,,,,addertb,,,,,,,,
+H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/bitAndTB.vhdl,1728050193,vhdl,,,,andtb,,,,,,,,
+H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/bitOrTB.vhdl,1728050902,vhdl,,,,ortb,,,,,,,,
+H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/bitXorTB.vhdl,1728051353,vhdl,,,,xortb,,,,,,,,
 H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/negationTB.vhdl,1727989234,vhdl,,,,negationtb,,,,,,,,
+H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/notTB.vhdl,1728051816,vhdl,,,,nottb,,,,,,,,
+H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/oeTB.vhdl,1728052510,vhdl,,,,oetb,,,,,,,,
 H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/shiftTB.vhdl,1727989610,vhdl,,,,shifttb,,,,,,,,
 H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/subtractorTB.vhdl,1727988719,vhdl,,,,subtractortb,,,,,,,,
-H:/EGRE365/lab4/lab4.srcs/sources_1/new/ALU.vhd,1727990034,vhdl,H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/shiftTB.vhdl,,,alu,,,,,,,,
+H:/EGRE365/lab4/lab4.srcs/sources_1/new/ALU.vhd,1728053279,vhdl,H:/EGRE365/lab4/lab4.srcs/sim_1/imports/Lab3/oeTB.vhdl,,,alu,,,,,,,,

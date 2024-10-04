@@ -39,9 +39,6 @@ architecture behavior of orTB is
   constant mode_vals : mode_array := (B"101", 
                                       B"101", 
                                       B"101", 
-                                      B"101", 
-                                      B"101", 
-                                      B"101", 
                                       B"101");
                                       
   constant Zero_vals : Zero_array := ('0','0','1','0');
@@ -81,7 +78,7 @@ begin
     for i in 0 to (NUM_VALS - 1) loop
       A_sig <= A_vals(i);
       B_sig <= B_vals(i);
-      C_sig <= C_vals(i);
+      --C_sig <= C_vals(i);
       mode_sig <= mode_vals(i);
       OE_sig <= OE_vals(i);
       wait for TIME_DELAY;

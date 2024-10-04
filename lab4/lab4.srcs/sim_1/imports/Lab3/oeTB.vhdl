@@ -43,7 +43,7 @@ architecture behavior of oeTB is
   constant Cout_vals : Cout_array := ('0','0');
   
   constant C_vals : C_array := (B"0000_0000_0000_0001",
-                                B"ZZZZ_ZZZZ_ZZZZ_ZZZZ"); 
+                                "ZZZZZZZZZZZZZZZZ"); 
                                 
                                 
 
@@ -71,11 +71,18 @@ begin
     for i in 0 to (NUM_VALS - 1) loop
       A_sig <= A_vals(i);
       B_sig <= B_vals(i);
-      C_sig <= C_vals(i);
+      --C_sig <= C_vals(i);
       mode_sig <= mode_vals(i);
       OE_sig <= OE_vals(i);
       wait for TIME_DELAY;
     end loop;
+    
+--    C_sig <= B"0000_0000_0000_0000";
+--    wait for TIME_DELAY;
+--    A_sig <= A_vals(0);
+--    B_sig <= B_vals(0);
+--    mode_sig <= mode_vals(0);
+--    OE_sig <= '1';
     wait;
   end process stimulus;
 
@@ -101,6 +108,16 @@ begin
       i := i + 1;
       wait for TIME_DELAY/2;
     end loop;
+    
+--    assert C_sig = B"0000_0000_0000_0000";
+--        report "Cout value is incorrect."
+--        severity error;
+--    wait for TIME_DELAY/2;
+    
+--    assert C_sig = C_vals(0);
+--        report "Cout Value is incorrect."
+--        severity error;
+        
     wait;
   end process monitor;
 
