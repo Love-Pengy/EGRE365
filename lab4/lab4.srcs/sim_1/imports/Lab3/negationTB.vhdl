@@ -41,7 +41,7 @@ architecture behavior of negationTB is
   
   constant OE_vals : OE_array := ('1','1','1');
   
-  constant Cout_vals : Cout_array := ('1','0','0');
+  constant Cout_vals : Cout_array := ('0','0','0');
   
   constant C_vals : C_array := (B"0000_0000_0000_0000",
                                 B"1111_1111_1111_0000",  

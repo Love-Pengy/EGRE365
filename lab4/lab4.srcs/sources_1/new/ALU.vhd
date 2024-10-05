@@ -62,12 +62,7 @@ begin
                       sumAns := sumCalc1 + sumCalc2;
                       
                       C <= std_logic_vector(sumAns(N-1 downto 0));
-                      Cout <= sumAns(N);
-                      if(sumAns = B"0000_0000_0000_0000") then
-                          Zero <= '1';
-                      else
-                        Zero <= '0';
-                      end if;                
+                      Cout <= sumAns(N);               
                       
                     -- Subtraction
                      when "001" =>  
@@ -75,24 +70,12 @@ begin
                       sumCalc2 := resize(signed(B),N+1);                         -- resize to N+1 long
                       sumAns := sumCalc1 - sumCalc2;
                       C <= std_logic_vector(sumAns(N-1 downto 0));
-                       if(sumAns = B"0000_0000_0000_0000") then
-                         Zero <= '1';
-                       else
-                        Zero <= '0';
-                       end if;
-                       
-                       Cout <= sumAns(N);
+                      Cout <= sumAns(N);
 
                     -- -A
                      when "010" =>
                        ans := NOT signed(A);
                        ans := ans + 1;
-                       if(ans = B"0000_0000_0000_0000") then
-                         Zero <= '1';
-                       else 
-                        Zero <= '0';
-                       end if;
-                       
                        Cout <= '0';
                        C <= std_logic_vector(ans(N-1 downto 0));
                        
@@ -100,43 +83,23 @@ begin
                      when "011" =>
                        ans := signed(A) SLL 1; 
                        Cout <= ans(N-1) XOR A(N-1);
-                       if(ans = B"0000_0000_0000_0000") then 
-                         Zero <= '1';
-                       else 
-                        Zero <= '0';
-                       end if;
                        C  <= std_logic_vector(ans(N-1 downto 0));
 
                     -- &
                      when "100" =>
                        ans := signed(A) AND signed(B);
-                       if(ans = 0) then 
-                         Zero <= '1';
-                       else 
-                        Zero <= '0';
-                       end if;
                        Cout <= ans(0);
                        C <= std_logic_vector(ans);
 
                     -- | 
                      when "101" =>
                        ans := signed(A) OR signed(B);
-                       if(ans = 0) then 
-                         Zero <= '1';
-                       else 
-                        Zero <= '0';
-                       end if;
                        Cout <= ans(0);
                        C <= std_logic_vector(ans);
 
                     -- XOR 
                      when "110" =>
                        ans := signed(A) XOR signed(B);
-                       if(ans = 0) then 
-                         Zero <= '1';
-                       else
-                        Zero <= '0';
-                       end if;
                        Cout <= ans(0);
                        C <= std_logic_vector(ans);
                        
@@ -144,17 +107,18 @@ begin
                     -- NOT(A)
                     when "111" =>
                       ans := NOT signed(A);
-                      if(ans = 0) then
-                        Zero <= '1';
-                      else 
-                        Zero <= '0';
-                      end if;
+
                       Cout <= ans(0);
                       C <= std_logic_vector(ans);
                     when others =>
                     
                 end case;
-                else 
+                  if(ans = 0) then
+                        Zero <= '1';
+                      else 
+                        Zero <= '0';
+                      end if;
+                  else 
                     C <= "ZZZZZZZZZZZZZZZZ";
                 end if;
         end process;
