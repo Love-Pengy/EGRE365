@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../lab6_tutorial_sources/top_level_testbench_synth.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "top_level_post_synth_testbench_func_synth" "xil_defaultlib.top_level_post_synth_testbench" -log "elaborate.log" 

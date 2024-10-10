@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/EGRE365/lab6Tut/lab6Tut.sim/sim_1/impl/timing/xsim/top_level_post_synth_testbench_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_level
+INFO: [VRFC 10-311] analyzing module glbl

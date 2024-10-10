@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6Tut/lab6Tut.sim/sim_1/synth/func/xsim/top_level_post_synth_testbench_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_level'
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6Tut/lab6_tutorial_sources/top_level_testbench_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_level_post_synth_testbench'
