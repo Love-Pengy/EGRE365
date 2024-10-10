@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "f2TB_behav" "xil_defaultlib.f2TB" -log "elaborate.log" 

@@ -1,7 +1,7 @@
-Running: xsim.dir/negationTB_behav/xsimk.exe -simmode gui -wdb negationTB_behav.wdb -simrunnum 0 -socket 64932
+Running: xsim.dir/negationTB_behav/xsimk.exe -simmode gui -wdb negationTB_behav.wdb -simrunnum 0 -socket 49779
 Design successfully loaded
-Design Loading Memory Usage: 9944 KB (Peak: 9944 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 9684 KB (Peak: 9684 KB)
+Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 10472 KB (Peak: 10472 KB)
-Simulation CPU Usage: 30 ms
+Simulation Memory Usage: 10288 KB (Peak: 10288 KB)
+Simulation CPU Usage: 15 ms

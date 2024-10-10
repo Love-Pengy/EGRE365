@@ -1,0 +1,11 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/frazierb2/Downloads/example19_and2.vhd,1728515964,vhdl,,,,and2_with_rf,,,,,,,,
+C:/Users/frazierb2/Downloads/example19_inverter.vhd,1728515964,vhdl,,,,inverter_with_rf,,,,,,,,
+C:/Users/frazierb2/Downloads/example19_or2.vhd,1728515811,vhdl,,,,or2_with_rf,,,,,,,,
+H:/EGRE365/lab5/lab5.srcs/sim_1/new/f1TB.vhd,1728515123,vhdl,,,,f1tb,,,,,,,,
+H:/EGRE365/lab5/lab5.srcs/sim_1/new/f2TB.vhd,1728517674,vhdl,,,,f2tb,,,,,,,,
+H:/EGRE365/lab5/lab5.srcs/sources_1/new/F1TopLevel.vhd,1728514722,vhdl,H:/EGRE365/lab5/lab5.srcs/sim_1/new/f1TB.vhd,,,f1toplevel,,,,,,,,
+H:/EGRE365/lab5/lab5.srcs/sources_1/new/f2TopLevel.vhd,1728517957,vhdl,H:/EGRE365/lab5/lab5.srcs/sim_1/new/f2TB.vhd,,,f2toplevel,,,,,,,,
