@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../lab6_assignment_sources/clock_divider.vhd" \
+"../../../../lab6_assignment_sources/counter.vhd" \
+"../../../../lab6_assignment_sources/d_ff_en.vhd" \
+"../../../../lab6_assignment_sources/top_level.vhd" \
+"../../../../lab6_assignment_sources/top_level_testbench.vhd" \
+
+# Do not sort compile order
+nosort
