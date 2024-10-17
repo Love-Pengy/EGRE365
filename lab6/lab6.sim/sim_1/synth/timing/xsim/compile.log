@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/EGRE365/lab6/lab6.sim/sim_1/synth/timing/xsim/top_level_testbench_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-311] analyzing module d_ff_en
+INFO: [VRFC 10-311] analyzing module top_level
+INFO: [VRFC 10-311] analyzing module glbl

@@ -14,20 +14,21 @@ ARCHITECTURE Behavioral OF d_ff_en IS
 
   BEGIN
     
-    process(clk) 
+    process(clk, rst, d, en) 
     begin 
+--        q <= '0';
+--        qn <= '1';
     -- 0 reset 1 set 
         if(rising_edge(clk)) then
            if(en = '1') then 
               if(rst = '1') then 
                   q <= '0';
-                  q <= '1';
-              end if;
+                  qn <= '1';
               else 
                 q <= d;
                 qn <= NOT d;
-            end if;
-            
+              end if;  
+          end if;
         end if;
     
     end process;

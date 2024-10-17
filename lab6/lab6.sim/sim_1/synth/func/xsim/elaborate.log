@@ -1,0 +1,8 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_level_testbench_func_synth xil_defaultlib.top_level_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-8801] cannot find architecture 'behavior' in entity 'top_level' [H:/EGRE365/lab6/lab6_assignment_sources/top_level_testbench.vhd:70]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit top_level_testbench in library work failed.

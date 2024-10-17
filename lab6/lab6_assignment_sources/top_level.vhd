@@ -46,8 +46,8 @@ architecture Behavior of top_level is
 -- varifying the functionality, so for simulation (both behavioral and post-synthesis and layout)
 -- we cut the clock frequency down
 
---constant CLOCK_FREQ : positive := 100_000_000;  -- clock frequency this is the value for hardware mapping with the 100 MHz clock
-constant CLOCK_FREQ : positive := 100;            -- clock frequency this is the value for simulation
+constant CLOCK_FREQ : positive := 100_000_000;  -- clock frequency this is the value for hardware mapping with the 100 MHz clock
+--constant CLOCK_FREQ : positive := 100;            -- clock frequency this is the value for simulation
 
 signal reset_sig : std_logic;
 signal slow_clk  : std_logic;
