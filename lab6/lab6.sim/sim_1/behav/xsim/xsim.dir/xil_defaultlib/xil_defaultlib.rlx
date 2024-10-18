@@ -3,7 +3,7 @@
 Oct 13 2023
 20:47:58
 H:/EGRE365/lab6/lab6_assignment_sources/clock_divider.vhd,1568318110,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,,,clock_divider,,,,,,,,
-H:/EGRE365/lab6/lab6_assignment_sources/counter.vhd,1729186076,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,,,counter,,,,,,,,
-H:/EGRE365/lab6/lab6_assignment_sources/d_ff_en.vhd,1729176555,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,,,d_ff_en,,,,,,,,
-H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,1729186648,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level_testbench.vhd,,,top_level,,,,,,,,
+H:/EGRE365/lab6/lab6_assignment_sources/counter.vhd,1729211863,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,,,counter,,,,,,,,
+H:/EGRE365/lab6/lab6_assignment_sources/d_ff_en.vhd,1729211667,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,,,d_ff_en,,,,,,,,
+H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd,1729210498,vhdl,H:/EGRE365/lab6/lab6_assignment_sources/top_level_testbench.vhd,,,top_level,,,,,,,,
 H:/EGRE365/lab6/lab6_assignment_sources/top_level_testbench.vhd,1633722170,vhdl,,,,top_level_testbench,,,,,,,,

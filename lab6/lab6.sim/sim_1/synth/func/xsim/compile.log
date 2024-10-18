@@ -1,7 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6/lab6.sim/sim_1/synth/func/xsim/top_level_testbench_func_synth.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'clock_divider'
-INFO: [VRFC 10-3107] analyzing entity 'counter'
-INFO: [VRFC 10-3107] analyzing entity 'd_ff_en'
-INFO: [VRFC 10-3107] analyzing entity 'top_level'
-INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6/lab6_assignment_sources/top_level_testbench.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'top_level_testbench'

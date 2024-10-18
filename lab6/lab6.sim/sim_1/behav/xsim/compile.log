@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6/lab6_assignment_sources/counter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6/lab6_assignment_sources/top_level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_level'
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE365/lab6/lab6_assignment_sources/top_level_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_level_testbench'

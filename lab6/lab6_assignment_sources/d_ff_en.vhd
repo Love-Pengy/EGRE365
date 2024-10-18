@@ -6,18 +6,17 @@ ENTITY d_ff_en is
        clk : IN  std_logic;
        rst : IN std_logic;
        en  : IN std_logic;
-       q   : OUT std_logic;
-       qn  : OUT std_logic);
+       q   : OUT std_logic := '0';
+       qn  : OUT std_logic := '1');
 END d_ff_en;
 
 ARCHITECTURE Behavioral OF d_ff_en IS
 
   BEGIN
     
-    process(clk, rst, d, en) 
+    process(clk, rst, d, en)
     begin 
---        q <= '0';
---        qn <= '1';
+        
     -- 0 reset 1 set 
         if(rising_edge(clk)) then
            if(en = '1') then 

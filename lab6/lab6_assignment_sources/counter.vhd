@@ -6,17 +6,16 @@ use IEEE.NUMERIC_STD.ALL;
 entity counter is
    port( rst   : in std_logic;
          clk   : in  std_logic;
-		 count : out std_logic_vector(3 downto 0)
+		 count : out std_logic_vector(3 downto 0) := (others => '0')
    );
 end counter ;
 
 architecture Behavioral of counter is
   
   begin
-  
     process(clk, rst)
     variable hold : std_logic_vector(3 downto 0) := (others => '0');
-    begin 
+    begin
         if(rst = '1') then 
             hold := B"0000";
             count <= hold;

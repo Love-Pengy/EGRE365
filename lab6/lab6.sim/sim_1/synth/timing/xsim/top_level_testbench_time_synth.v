@@ -2,8 +2,8 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Thu Oct 17 15:46:17 2024
-// Host        : EGR-W447-16 running 64-bit major release  (build 9200)
+// Date        : Thu Oct 17 21:00:58 2024
+// Host        : EGR-REMOTE-02 running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               H:/EGRE365/lab6/lab6.sim/sim_1/synth/timing/xsim/top_level_testbench_time_synth.v
 // Design      : top_level
