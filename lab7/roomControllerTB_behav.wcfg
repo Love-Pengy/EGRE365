@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="roomControllerTB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="roomControllerTB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="635.001 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/roomControllerTB/clk_sig" type="logic">
+      <obj_property name="ElementShortName">clk_sig</obj_property>
+      <obj_property name="ObjectShortName">clk_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/X1_sig" type="logic">
+      <obj_property name="ElementShortName">X1_sig</obj_property>
+      <obj_property name="ObjectShortName">X1_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/X2_sig" type="logic">
+      <obj_property name="ElementShortName">X2_sig</obj_property>
+      <obj_property name="ObjectShortName">X2_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/reset_sig" type="logic">
+      <obj_property name="ElementShortName">reset_sig</obj_property>
+      <obj_property name="ObjectShortName">reset_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/Zg_sig" type="logic">
+      <obj_property name="ElementShortName">Zg_sig</obj_property>
+      <obj_property name="ObjectShortName">Zg_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/Zr_sig" type="logic">
+      <obj_property name="ElementShortName">Zr_sig</obj_property>
+      <obj_property name="ObjectShortName">Zr_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/Z1_sig" type="logic">
+      <obj_property name="ElementShortName">Z1_sig</obj_property>
+      <obj_property name="ObjectShortName">Z1_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/DUT/presentState" type="other">
+      <obj_property name="ElementShortName">presentState</obj_property>
+      <obj_property name="ObjectShortName">presentState</obj_property>
+   </wvobject>
+   <wvobject fp_name="/roomControllerTB/DUT/nextState" type="other">
+      <obj_property name="ElementShortName">nextState</obj_property>
+      <obj_property name="ObjectShortName">nextState</obj_property>
+   </wvobject>
+</wave_config>

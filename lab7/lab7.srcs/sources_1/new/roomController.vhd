@@ -22,15 +22,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity roomController is
   Port (clk: in std_logic;
         reset: in std_logic;
@@ -53,7 +44,7 @@ begin
             end if;
    end process;
    
-   nextStateProc: process(presentState)
+   nextStateProc: process(presentState, X1, X2)
    begin
     case presentState is 
         when zeroInRoom => 
@@ -61,12 +52,16 @@ begin
                 nextState <= presentState;
             elsif((X1 = '1') AND (X2 = '0')) then 
                 nextState <= firstEntering;
+            else 
+                nextState <= presentState; 
             end if;
         when firstEntering => 
             if((X1 = '1') AND (X2 = '0')) then
                 nextState <= presentState;
             elsif((X1 = '0') AND (X2 = '0')) then
                 nextState <= oneInRoom;
+            else 
+               nextState <= presentState; 
             end if;
         when oneInRoom => 
             if((X1 = '0') AND (X2 = '0')) then
@@ -75,18 +70,24 @@ begin
                 nextState <= firstExiting;
             elsif((X1 = '1') AND (X2 = '0')) then
                 nextState <= secondEntering;
+            else 
+                nextState <= presentState; 
             end if;
         when firstExiting => 
             if((X1 = '0') AND (X2 = '1')) then
                 nextState <= presentState;
             elsif((X1 = '0') AND (X2 = '0')) then
                 nextState <= zeroInRoom; 
+            else 
+                nextState <= presentState; 
             end if;
         when secondEntering => 
             if((X1 = '1') AND (X2 = '0')) then 
                 nextState <= presentState;
             elsif((X1 = '0') AND (X2 = '0')) then 
                 nextState <= twoInRoom;
+            else 
+                nextState <= presentState; 
             end if;
         when twoInRoom => 
             if((X1 = '0') AND (X2 = '0')) then
@@ -95,30 +96,40 @@ begin
                 nextState <= thirdEntering;
             elsif((X1 = '0') AND (X2 = '1')) then
                 nextState <= secondLeaving;
+            else 
+                nextState <= presentState; 
             end if;
         when secondLeaving => 
             if ((X1 = '0') AND (X2 = '1')) then 
                 nextState <= secondLeaving;
             elsif((X1 = '0') AND (X2 = '0')) then 
                 nextState <= oneInRoom;
+            else 
+                nextState <= presentState; 
             end if;
         when thirdEntering => 
             if ((X1 = '1') AND (X2 = '0')) then
                 nextState <= presentState; 
             elsif ((X1 = '0') AND (X2 = '0')) then
                 nextState <= threeInRoom;
+            else 
+                nextState <= presentState; 
             end if;
         when threeInRoom => 
             if ((X1 = '1') AND (X2 = '0')) then
                 nextState <= presentState;
             elsif ((X1 = '0') AND (X2 = '1')) then
                 nextState <= thirdLeavingRoom; 
+            else 
+                nextState <= presentState; 
            end if;
        when thirdLeavingRoom => 
            if ((X1 = '0') AND (X2 = '1')) then
                 nextState <= presentState; 
            elsif ((X1 = '0') AND (X2 = '0')) then
                 nextState <= twoInRoom;
+           else 
+                nextState <= presentState; 
            end if;
    end case;
    end process;
