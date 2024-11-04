@@ -1,7 +1,4 @@
-Running: xsim.dir/roomControllerTB_behav/xsimk.exe -simmode gui -wdb roomControllerTB_behav.wdb -simrunnum 0 -socket 56069
+Running: xsim.dir/roomControllerTB_behav/xsimk.exe -simmode gui -wdb roomControllerTB_behav.wdb -simrunnum 0 -socket 52519
 Design successfully loaded
-Design Loading Memory Usage: 9976 KB (Peak: 9976 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 10432 KB (Peak: 10432 KB)
-Simulation CPU Usage: 0 ms
+Design Loading Memory Usage: 10360 KB (Peak: 10360 KB)
+Design Loading CPU Usage: 15 ms
