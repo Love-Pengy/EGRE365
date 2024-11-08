@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../lab8.srcs/sources_1/imports/givenSources/clock_divider.vhd" \
+"../../../../lab8.srcs/sources_1/new/sevenSegmentDriver.vhd" \
+"../../../../lab8.srcs/sources_1/new/topLevel.vhd" \
+
+# Do not sort compile order
+nosort

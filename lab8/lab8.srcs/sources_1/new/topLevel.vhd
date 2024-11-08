@@ -27,9 +27,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity topLevel is
-  Port (LED : out std_logic_vector(15 downto 0);
-        C   : out std_logic_vector(6 downto 0);
-        DP  : out std_logic;
+  Port (--LED : out std_logic_vector(15 downto 0) := (others=>'0');
+        C : out std_logic_vector(6 downto 0);
+        DP  : out std_logic := '1';
         AN  : out std_logic_vector(7 downto 0);
         CLK100MHZ  : in  STD_LOGIC;
 		CPU_RESETN : in STD_LOGIC;
@@ -39,6 +39,7 @@ end topLevel;
 architecture Structural of topLevel is
 COMPONENT sevenSegment
     Port (clk: in std_logic;
+        reset: in std_logic;
         input: in std_logic_vector(15 downto 0);
         anOutput: out std_logic_vector(7 downto 0);
         dpOutput: out std_logic;
@@ -51,10 +52,16 @@ COMPONENT clockDivider
 end COMPONENT;
 
 FOR ALL: sevenSegment USE ENTITY work.sevenSegmentDriver(Behavioral);
-FOR ALL: clockDivider USE ENTITY work.clock_divider(Behavioral);
+FOR ALL: clockDivider USE ENTITY work.clock_divider(behavior);
 
+signal slowClock : std_logic;
 begin
 
+    clockDividerCalc: clockDivider
+        PORT MAP(mclk => CLK100MHZ, sclk => slowClock);
+        
+    sevenSegmentCalc: sevenSegment
+        PORT MAP(clk => slowClock, reset => CPU_RESETN, input => SW, anOutput => AN, dpOutput => DP, cOutput => C);
 
 
 end Structural;

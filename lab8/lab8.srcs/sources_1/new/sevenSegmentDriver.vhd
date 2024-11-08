@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Brandon Frazier
 -- 
 -- Create Date: 11/04/2024 11:35:50 AM
 -- Design Name: 
@@ -33,6 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity sevenSegmentDriver is
   Port (clk: in std_logic;
+        reset: in std_logic;
         input: in std_logic_vector(15 downto 0);
         anOutput: out std_logic_vector(7 downto 0);
         dpOutput: out std_logic;
@@ -40,29 +41,39 @@ entity sevenSegmentDriver is
 end sevenSegmentDriver;
 
 architecture Behavioral of sevenSegmentDriver is
-signal currVal : unsigned;
-signal count : unsigned; 
+signal currVal : std_logic_vector(3 downto 0);
+type swType is array (0 to 3) of std_logic_vector(3 downto 0);
+signal swMap : swType := (others=>(others=>'0'));
 begin
-    process(clk, input)
+
+    
+    process(clk, reset)
+    variable count : integer := 0; 
     begin   
-        if(rising_edge(clk)) then
-            count <= (count + 1) MOD 4;
-            if(to_integer(count) = 2) then
-                dpOutput <= '0';
+        swMap(3) <= input(3 downto 0);
+        swMap(0) <= input(7 downto 4);
+        swMap(1) <= input(11 downto 8);
+        swMap(2) <= input(15 downto 12);
+        
+        if(reset = '0') then 
+            dpOutput <= '1';
+            anOutput <= (others => '1');
+            cOutput <= (others => '1');
+            
+        elsif(rising_edge(clk)) then
+            
+            currVal <= swMap(count);
+            
+            if(count = 2) then
+                dpOutput <= '0'; 
             else 
                 dpOutput <= '1';
             end if;
-            anOutput(7 downto 4) <= "ZZZZ";
-            anOutput(4 downto 0) <= std_logic_vector(count);
-            currVal <= unsigned(input);
-        end if;
-    end process;
-
-    process(currVal)
-    begin
-        for i in 0 to 3 LOOP
-            currVal <= unsigned(input((4*i+4) downto (4*i))); 
-            case to_integer(currVal) is
+            
+            anOutput <= "11111111";
+            anOutput(count) <= '0';
+            --anOutput <= (count => '0', others => '1');
+            case to_integer(unsigned(currVal)) is
                 when 0 =>
                     cOutput <= "0000001";
                 when 1 => 
@@ -72,7 +83,7 @@ begin
                 when 3 => 
                     cOutput <= "0000110";
                 when 4 => 
-                    cOutput <= "1001110";
+                    cOutput <= "1001100";
                 when 5 => 
                     cOutput <= "0100100";
                 when 6 =>
@@ -84,7 +95,12 @@ begin
                 when 9 => 
                     cOutput <= "0000100";
                 when others => 
-                    cOutput <= "ZZZZZZZ";      
+                    cOutput <= "1111111";      
             end case;
+            count := count + 1;
+            if(count = 4) then 
+                count := 0;
+            end if;
+        end if; 
     end process;
 end Behavioral;
