@@ -2,6 +2,7 @@
 2020.2
 Oct 13 2023
 20:47:58
-H:/EGRE365/lab8/lab8.srcs/sources_1/imports/givenSources/clock_divider.vhd,1730756525,vhdl,H:/EGRE365/lab8/lab8.srcs/sources_1/new/topLevel.vhd,,,clock_divider,,,,,,,,
-H:/EGRE365/lab8/lab8.srcs/sources_1/new/sevenSegmentDriver.vhd,1731087171,vhdl,H:/EGRE365/lab8/lab8.srcs/sources_1/new/topLevel.vhd,,,sevensegmentdriver,,,,,,,,
-H:/EGRE365/lab8/lab8.srcs/sources_1/new/topLevel.vhd,1731010274,vhdl,,,,toplevel,,,,,,,,
+H:/EGRE365/lab8/lab8.srcs/sim_1/new/topLevelTB.vhd,1731118305,vhdl,,,,topleveltb,,,,,,,,
+H:/EGRE365/lab8/lab8.srcs/sources_1/imports/givenSources/clock_divider.vhd,1731118050,vhdl,H:/EGRE365/lab8/lab8.srcs/sources_1/new/topLevel.vhd,,,clock_divider,,,,,,,,
+H:/EGRE365/lab8/lab8.srcs/sources_1/new/sevenSegmentDriver.vhd,1731117749,vhdl,H:/EGRE365/lab8/lab8.srcs/sources_1/new/topLevel.vhd,,,sevensegmentdriver,,,,,,,,
+H:/EGRE365/lab8/lab8.srcs/sources_1/new/topLevel.vhd,1731090830,vhdl,H:/EGRE365/lab8/lab8.srcs/sim_1/new/topLevelTB.vhd,,,toplevel,,,,,,,,

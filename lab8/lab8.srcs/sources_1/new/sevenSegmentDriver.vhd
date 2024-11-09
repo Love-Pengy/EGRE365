@@ -35,9 +35,9 @@ entity sevenSegmentDriver is
   Port (clk: in std_logic;
         reset: in std_logic;
         input: in std_logic_vector(15 downto 0);
-        anOutput: out std_logic_vector(7 downto 0);
-        dpOutput: out std_logic;
-        cOutput: out std_logic_vector(6 downto 0));
+        anOutput: out std_logic_vector(7 downto 0) := (others => '1');
+        dpOutput: out std_logic := '1';
+        cOutput: out std_logic_vector(6 downto 0) := (others => '1'));
 end sevenSegmentDriver;
 
 architecture Behavioral of sevenSegmentDriver is
