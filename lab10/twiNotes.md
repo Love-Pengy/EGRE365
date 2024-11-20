@@ -1,0 +1,4 @@
+- ip core needs to wait 1200 clock cycles before it can operate 
+    - use stop light example to wait using a counter in the clock process
+- there are no writes so ground the write pins
+- address for the temp sensor is: 0x4B

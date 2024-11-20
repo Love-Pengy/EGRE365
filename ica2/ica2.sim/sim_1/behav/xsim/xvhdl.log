@@ -1,0 +1,2 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/EGRE365/ica2/ica2.srcs/sim_1/imports/Downloads/n_bit_adder_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'adder_8_bit_testbench'
